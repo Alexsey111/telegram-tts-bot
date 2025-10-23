@@ -1,0 +1,9 @@
+# Зависимости для телеграм бота TTS
+python-telegram-bot>=22.0
+elevenlabs>=2.20.0
+requests>=2.31.0
+
+# Дополнительные зависимости для стабильной работы
+httpx>=0.21.2
+pydantic>=1.9.2
+websockets>=11.0
