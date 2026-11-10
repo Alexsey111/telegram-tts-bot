@@ -19,10 +19,16 @@
    pip install -r requirements.txt
    ```
 
-3. **Настройте конфигурацию:**
-   - Откройте файл `config.py`
-   - Замените `YOUR_TELEGRAM_BOT_TOKEN_HERE` на токен вашего бота (получить у @BotFather)
-   - Замените `YOUR_ELEVENLABS_API_KEY_HERE` на ваш API ключ ElevenLabs
+3. **Настройте конфигурацию:** секреты берутся из переменных окружения, в коде их нет.
+   ```bash
+   set TELEGRAM_BOT_TOKEN=<токен от @BotFather>       # Windows
+   set ELEVENLABS_API_KEY=<ключ elevenlabs.io>
+
+   export TELEGRAM_BOT_TOKEN=<токен>                   # Linux/macOS
+   export ELEVENLABS_API_KEY=<ключ>
+   ```
+   Без токена бот при запуске сообщает об этом и завершается.
+   Необязательные: `MAX_TEXT_LENGTH` (по умолчанию 5000), `TEMP_AUDIO_DIR` (temp_audio).
 
 4. **Запустите бота:**
    ```bash
@@ -41,6 +47,10 @@
 1. Зарегистрируйтесь на [elevenlabs.io](https://elevenlabs.io/)
 2. Перейдите в настройки профиля
 3. Скопируйте ваш API ключ
+
+## Проверка перед запуском
+
+    python -c "import config; print(bool(config.TELEGRAM_BOT_TOKEN), bool(config.ELEVENLABS_API_KEY))"
 
 ## Структура проекта
 
